@@ -14,3 +14,16 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
 }
+/* 
+#floppy {
+  color: red;
+  fill: red;
+}
+
+.svg use{
+  color: red;
+  fill: red;
+} */
+.floppy {
+  fill: red; (цвет через переменную надо)
+}

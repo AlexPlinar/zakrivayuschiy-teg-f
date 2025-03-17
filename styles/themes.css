@@ -1,0 +1,33 @@
+:root.theme-light {
+    /* Цветовые переменные для светлой темы */
+    --color-background: white;
+    --color-accent: black;
+  
+    /* Вес шрифта для типографики */
+    --font-weight-text: var(--font-weight-text-light);
+    --font-weight-title: var(--font-weight-title-light);
+  }
+  
+  :root.theme-dark {
+    /* Цветовые переменные для тёмной темы */
+    --color-background: black;
+    --color-accent: #00CC14;
+  
+    /* Вес шрифта для типографики */
+    --font-weight-text: var(--font-weight-text-dark);
+    --font-weight-title: var(--font-weight-title-dark);
+  }
+  
+  /* Применение основных переменных к странице */
+  .page {
+    font-family: var(--font-primary);
+    font-variation-settings: "wght" var(--font-weight-text);
+    background-color: var(--color-background);
+    color: var(--color-accent); 
+  }
+  
+  /* Пример для заголовка карточки */
+  .card__title {
+    font-variation-settings: "wght" var(--font-weight-title);
+  }
+  
