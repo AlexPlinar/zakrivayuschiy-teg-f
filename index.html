@@ -20,35 +20,43 @@
 </head>
 
 <body class="page">
-  <header class="header"></header>
-  <main>
+
+  <header class="header">
+
+    <div class="header__logo">
+      <p class="header__logo-title">&lt/HTML&gt</p>
+      <p class="header__logo-subtitle">закрывающий тег</p>
+    </div>
+
     <nav class="header__theme-menu">
       <ul class="header__theme-menu-list">
         <li class="header__theme-menu-item">
-          <button class="header__theme-menu-button header__theme-menu-button_type_light">
-            день
+          <button class="header__theme-menu-button header__theme-menu-button_type_dark">
+            темно
           </button>
         </li>
         <li class="header__theme-menu-item">
-          <button class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto"
+          <button class="header__theme-menu-button header__theme-menu-button_type_auto"
             disabled>
             авто
           </button>
         </li>
         <li class="header__theme-menu-item">
-          <button class="header__theme-menu-button header__theme-menu-button_type_dark">
-            неон
+          <button class="header__theme-menu-button header__theme-menu-button_type_light">
+            светло
           </button>
         </li>
       </ul>
     </nav>
+  </header>
+
+  <main>
+
     <svg viewBox="0 0 39 39" width="39" height="39">
       <use href="svg/floppy.svg#floppy" class="floppy"></use>
     </svg>
-
-    
-
   </main>
+
   <script src="./scripts/like.js"></script>
 </body>
 

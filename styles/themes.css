@@ -2,32 +2,88 @@
     /* Цветовые переменные для светлой темы */
     --color-background: white;
     --color-accent: black;
-  
+
     /* Вес шрифта для типографики */
     --font-weight-text: var(--font-weight-text-light);
     --font-weight-title: var(--font-weight-title-light);
-  }
-  
-  :root.theme-dark {
+
+    --bg-image:
+        repeating-linear-gradient(90deg, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+        repeating-linear-gradient(180deg, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+        linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+
+}
+
+:root.theme-dark {
     /* Цветовые переменные для тёмной темы */
     --color-background: black;
     --color-accent: #00CC14;
-  
-    /* Вес шрифта для типографики */
+
+    /* Вес шрифта */
     --font-weight-text: var(--font-weight-text-dark);
     --font-weight-title: var(--font-weight-title-dark);
-  }
-  
-  /* Применение основных переменных к странице */
-  .page {
+
+    /* Градиент для тёмной темы*/
+    --bg-image:
+        repeating-linear-gradient(90deg, #000 0, #000 2px, transparent 2px, transparent 4px),
+        repeating-linear-gradient(180deg, #000 0, #000 2px, transparent 2px, transparent 4px),
+        linear-gradient(to bottom, #007f0c 0.01%, #004306 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Цветовые переменные для тёмной темы */
+        --color-background: black;
+        --color-accent: #00CC14;
+
+        /* Вес шрифта */
+        --font-weight-text: var(--font-weight-text-dark);
+        --font-weight-title: var(--font-weight-title-dark);
+
+        /* Градиент для тёмной темы*/
+        --bg-image:
+            repeating-linear-gradient(90deg, #000 0, #000 2px, transparent 2px, transparent 4px),
+            repeating-linear-gradient(180deg, #000 0, #000 2px, transparent 2px, transparent 4px),
+            linear-gradient(to bottom, #007f0c 0.01%, #004306 100%);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Цветовые переменные для светлой темы */
+        --color-background: white;
+        --color-accent: black;
+
+        /* Вес шрифта для типографики */
+        --font-weight-text: var(--font-weight-text-light);
+        --font-weight-title: var(--font-weight-title-light);
+
+        /* Градиент для светлой темы*/
+        --bg-image:
+            repeating-linear-gradient(90deg, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+            repeating-linear-gradient(180deg, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+            linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+    }
+}
+
+/* Применение основных переменных к странице */
+.page {
+    background-image: var(--bg-image);
+    background-size: var(--bg-size);
+    background-attachment: fixed;
+    background-color: var(--color-background);
+    color: var(--color-accent);
     font-family: var(--font-primary);
     font-variation-settings: "wght" var(--font-weight-text);
+}
+
+.header {
+    border: 2px solid var(--color-accent);
     background-color: var(--color-background);
-    color: var(--color-accent); 
-  }
-  
-  /* Пример для заголовка карточки */
-  .card__title {
+}
+
+
+/* Пример для заголовка карточки
+.card__title {
     font-variation-settings: "wght" var(--font-weight-title);
-  }
-  
+} */
