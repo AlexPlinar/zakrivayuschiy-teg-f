@@ -35,7 +35,7 @@ body {}
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-block-start: 100px;
+  margin: 100px 0;
   padding-block-start: 120px;
   font-family: var(--font-accent);
   text-transform: uppercase;
@@ -72,6 +72,7 @@ body {}
 
 .header__theme-menu-button_active {
   position: relative;
+  opacity: 60%;
 }
 
 .header__theme-menu-button_active:disabled::after {
@@ -79,4 +80,25 @@ body {}
   content: "▶";
   left: -13px;
   opacity: 60%;
+}
+
+.main__card-title {
+  margin: 4px 10px 6px;
+}
+
+.main__card-text {
+  margin: 20px 25px 26px;
+}
+
+.card__like-button {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  display: flex;
+  justify-self: end;
+  padding: 10px 35px;
+  margin-right: 25px;
+}
+
+.card__like-button::after {
+ /*не через псевдоэлемент надо, а как иконку. Сверху инструкция по названию*/
 }
