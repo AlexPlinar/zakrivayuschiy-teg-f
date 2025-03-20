@@ -93,12 +93,33 @@ body {}
 .card__like-button {
   font-family: var(--font-accent);
   font-size: 14px;
-  display: flex;
-  justify-self: end;
   padding: 10px 35px;
   margin-right: 25px;
 }
 
-.card__like-button::after {
- /*не через псевдоэлемент надо, а как иконку. Сверху инструкция по названию*/
+.like-buttons {
+  display: flex;
+  justify-self: end;
+  margin-block-end: 25px;
+}
+
+.card__icon-button {
+  padding: 6px 12px 0 0;
+}
+
+.main__card {
+  margin-block-end: 50px;
+}
+
+.main__card-image-wrapper {
+  position: relative;
+}
+
+.main__card-label {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  opacity: 50%;
+  position: absolute;
+  top: 24px;
+  right: 11px;
 }

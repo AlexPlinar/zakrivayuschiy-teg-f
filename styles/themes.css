@@ -2,6 +2,7 @@
     /* Цветовые переменные для светлой темы */
     --color-background: white;
     --color-accent: black;
+    --color-label-border: white;
 
     /* Вес шрифта для типографики */
     --font-weight-text: var(--font-weight-text-light);
@@ -17,6 +18,8 @@
     /* Цветовые переменные для тёмной темы */
     --color-background: black;
     --color-accent: #00CC14;
+    --color-label-border: black;
+
 
     /* Вес шрифта */
     --font-weight-text: var(--font-weight-text-dark);
@@ -29,11 +32,31 @@
         linear-gradient(to bottom, #007f0c 0.01%, #004306 100%);
 }
 
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Цветовые переменные для светлой темы */
+        --color-background: white;
+        --color-accent: black;
+        --color-label-border: white;
+
+        /* Вес шрифта для типографики */
+        --font-weight-text: var(--font-weight-text-light);
+        --font-weight-title: var(--font-weight-title-light);
+
+        /* Градиент для светлой темы*/
+        --bg-image:
+            repeating-linear-gradient(90deg, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+            repeating-linear-gradient(180deg, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+            linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+    }
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
         /* Цветовые переменные для тёмной темы */
         --color-background: black;
         --color-accent: #00CC14;
+        --color-label-border: black;
 
         /* Вес шрифта */
         --font-weight-text: var(--font-weight-text-dark);
@@ -47,23 +70,7 @@
     }
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        /* Цветовые переменные для светлой темы */
-        --color-background: white;
-        --color-accent: black;
 
-        /* Вес шрифта для типографики */
-        --font-weight-text: var(--font-weight-text-light);
-        --font-weight-title: var(--font-weight-title-light);
-
-        /* Градиент для светлой темы*/
-        --bg-image:
-            repeating-linear-gradient(90deg, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
-            repeating-linear-gradient(180deg, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
-            linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
-    }
-}
 
 /* Применение основных переменных к странице */
 .page {
@@ -103,3 +110,23 @@
     color: var(--color-accent);
     border: 2px solid var(--color-accent);
 }
+
+.card__icon-button {
+    background-color: var(--color-background);
+    border: transparent;
+}
+
+.main__card-label {
+    mix-blend-mode: hard-light;
+    -webkit-text-stroke: 1px var(--color-label-border);
+}
+
+@supports not (-webkit-text-stroke: 1px var(--color-label-border)) {
+    .main__card-label {
+      text-shadow: 
+        -1px -1px 0 var(--color-label-border),
+        1px -1px 0 var(--color-label-border),
+        -1px 1px 0 var(--color-label-border),
+        1px 1px 0 var(--color-label-border);
+    }
+  }

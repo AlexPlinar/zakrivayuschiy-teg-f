@@ -54,7 +54,13 @@
       <p class="main__card-title">
         Фритрек и нулевой спринт: Подготовка к работе
       </p>
-      <img class="main__card-image" src="./images/car.png">
+      <div class="main__card-image-wrapper">
+        <img class="main__card-image" src="./images/car.png">
+        <span class="main__card-label">
+          &lt/HTML&gt
+        </span>
+      </div>
+
       <p class="main__card-text">
         Это было самое начало пути. На этом этапе важно было проникнуться основами и настроиться на учёбу. И, возможно,
         подумать, как новые знания могут повлиять на ваше будущее.
@@ -62,14 +68,34 @@
       <p class="main__card-text">
         Место для ваших воспоминаний о начале обучения.
       </p>
-      <button class="card__like-button">
-        Like
-      </button>
+
+      <div class="like-buttons">
+        <button class="card__icon-button">
+          <svg class="like-icon" width="27" height="24" fill="none">
+            <path fill="#000" d="M6 0H3v3h3V0ZM9 0H6v3h3V0ZM3 3H0v3h3V3ZM3 6H0v3h3V6ZM3 9H0v3h3V9ZM12
+                 0H9v3h3V0ZM6 12H3v3h3v-3ZM9 15H6v3h3v-3ZM12 18H9v3h3v-3ZM21 0h3v3h-3V0ZM18 
+                 0h3v3h-3V0ZM24 3h3v3h-3V3ZM24 6h3v3h-3V6ZM24 9h3v3h-3V9ZM15 0h3v3h-3V0ZM21 
+                 12h3v3h-3v-3ZM18 15h3v3h-3v-3ZM15 18h3v3h-3v-3ZM15 3h-3v3h3V3ZM15 21h-3v3h3v-3Z" />
+          </svg>
+        </button>
+
+        <button class="card__like-button">
+          <span class="button__text">Like</span>
+        </button>
+      </div>
+
     </article>
+    <!--
+    /* Здесь вы напишете основную часть стилей страницы.
 
-
-
-
+    Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+    ✦ like-icon — для svg-иконки анимированного сердца
+    ✦ card__like-button — для кнопки Like рядом с иконкой
+    ✦ card__icon-button — для кнопки, оборачивающей иконку
+    ✦ card__icon-button — для кнопки, оборачивающей иконку
+    ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+    ✦ button__text — для обозначения текстового элемента внутри кнопки */
+-->
 
 
     <svg viewBox="0 0 39 39" width="39" height="39">
