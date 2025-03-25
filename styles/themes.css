@@ -3,6 +3,7 @@
     --color-background: white;
     --color-accent: black;
     --color-label-border: white;
+    --color-text-mixed: white;
 
     /* Вес шрифта для типографики */
     --font-weight-text: var(--font-weight-text-light);
@@ -19,7 +20,7 @@
     --color-background: black;
     --color-accent: #00CC14;
     --color-label-border: black;
-
+    --color-text-mixed: #00CC14;
 
     /* Вес шрифта */
     --font-weight-text: var(--font-weight-text-dark);
@@ -38,6 +39,7 @@
         --color-background: white;
         --color-accent: black;
         --color-label-border: white;
+        --color-text-mixed: white;
 
         /* Вес шрифта для типографики */
         --font-weight-text: var(--font-weight-text-light);
@@ -57,6 +59,7 @@
         --color-background: black;
         --color-accent: #00CC14;
         --color-label-border: black;
+        --color-text-mixed: #00CC14;
 
         /* Вес шрифта */
         --font-weight-text: var(--font-weight-text-dark);
@@ -105,7 +108,11 @@
     font-variation-settings: "wght" var(--font-weight-text);
 }
 
-.card__like-button {
+.button-save__text {
+    font-variation-settings: "wght" var(--font-weight-buttons);
+}
+
+.card__like-button, .button-save {
     background-color: var(--color-background);
     color: var(--color-accent);
     border: 2px solid var(--color-accent);
