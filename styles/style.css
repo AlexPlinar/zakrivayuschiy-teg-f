@@ -130,11 +130,11 @@ body {}
 }
 
 .mixed-effect {
-  transition: box-shadow 0.3s ease-in-out, opacity 1s ease;
-  outline: none;
   position: relative;
-  overflow: hidden;
+  transition: box-shadow 0.3s ease-in-out;
+  outline: none;
   background-color: var(--color-background);
+  overflow: hidden;
 }
 
 .mixed-effect:focus {
@@ -142,36 +142,38 @@ body {}
 }
 
 .mixed-effect::before {
-  content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-accent);
   bottom: 0;
   left: 0;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.5s ease-in-out;
   z-index: 1;
+  transition: transform 0.5s ease-in-out;
+  background-color: var(--color-accent);
+  width: 100%;
+  height: 100%;
+  content: "";
 }
 
 .mixed-effect:hover::before {
   transform: scaleX(1);
 }
 
-.mixed-effect span,svg {
+.mixed-effect span,
+.mixed-effect svg {
   position: relative;
   z-index: 2;
   mix-blend-mode: difference;
-  color: var(--color-text-mixed);
   transition: color 1s ease-in-out;
+  color: var(--color-text-mixed);
 }
 
 .card__like-button {
   margin-right: 25px;
-  padding: 10px 35px;
+  width: 118px;
   font-size: 14px;
   font-family: var(--font-accent);
+  text-align: center;
 }
 
 .like-buttons {
@@ -179,6 +181,108 @@ body {}
   justify-self: end;
   margin-block-end: 25px;
 }
+
+/* Для сердцевины  */
+.like-icon .heart .core {
+  fill: var(--color-core);
+  transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon:hover .heart .core {
+  fill: var(--color-contour);
+  transition-delay: 0s;
+}
+
+/* Для основного тела сердца */
+.like-icon .heart .main-body {
+  fill: transparent;
+  transition: fill 0.3s linear 0s;
+}
+
+.like-icon:hover .heart .main-body {
+  fill: var(--color-contour);
+  transition-delay: 0.05s;
+}
+
+/* Состояние :active — при нажатии и удержании */
+.like-icon:active .heart .core {
+  fill: red;
+  transition: fill 0.3s linear 0s;
+  /* переход без задержки */
+}
+
+.like-icon:active .heart .main-body {
+  fill: red;
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon .sparks {
+  opacity: 0;
+}
+
+/* При клике: сердцевина (.core) и основное тело (.main-body) заполняются красным */
+.like-icon.is-liked .heart .core,
+.like-icon.is-liked .heart .main-body {
+  fill: red;
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .heart .contour {
+  fill: red;
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: scalePulse 0.3s ease-in 0.1s;
+}
+
+/* Масштабирование сердца: от 1 до 1.5 и обратно до 1 */
+@keyframes scalePulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparkFlash 0.6s ease-in 0.2s;
+}
+
+/* Появление искр: плавное появление и исчезновение */
+@keyframes sparkFlash {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* При отключении класса is-liked (сердце выключают) контур возвращается быстрее —
+   за 0.1s без задержек */
+.like-icon:not(.is-liked) .heart .contour {
+  transition: fill 0.1s linear;
+}
+
+
+
+
+
+
+
 
 .card__icon-button {
   padding: 6px 12px 0 0;
@@ -204,4 +308,40 @@ body {}
 .button-save {
   font-size: 14px;
   font-family: var(--font-accent);
+}
+
+.dialog {
+  font-size: 14px;
+  font-family: var(--font-accent);
+  line-height: 150%;
+  text-transform: uppercase;
+  padding: 30px 41px; 
+  border: var(--color-accent) 2px solid;
+  color: var(--color-accent);
+  background-color: var(--color-background);
+}
+
+.dialog-content {
+  display: flex;
+  gap: 20px;
+}
+
+.dialog-close-button {
+  background-color: transparent;
+  border: var(--color-accent) 2px solid;
+  padding: 0;
+  display: block;
+  width: 100%;
+  height: 38px;
+  margin-block-start: 20px;
+}
+
+.dialog-content svg {
+  flex-shrink: 0;
+  width: 39px;
+  height: 39px;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 75%);
 }

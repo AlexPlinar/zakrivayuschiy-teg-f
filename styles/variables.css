@@ -22,6 +22,12 @@
     --color-accent: black;
     --color-label-border: white;
 
+    /* Цвет контура */
+    --color-contour: black;
+    /* Начальный цвет сердцевины */
+    --color-core: white;
+
+
     /* Градиент для светлой темы*/
     --bg-image:
         repeating-linear-gradient(90deg, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),

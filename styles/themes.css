@@ -9,6 +9,8 @@
     --font-weight-text: var(--font-weight-text-light);
     --font-weight-title: var(--font-weight-title-light);
 
+    --color-core: white;
+
     --bg-image:
         repeating-linear-gradient(90deg, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
         repeating-linear-gradient(180deg, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
@@ -25,6 +27,8 @@
     /* Вес шрифта */
     --font-weight-text: var(--font-weight-text-dark);
     --font-weight-title: var(--font-weight-title-dark);
+
+    --color-core: black;
 
     /* Градиент для тёмной темы*/
     --bg-image:
@@ -45,6 +49,8 @@
         --font-weight-text: var(--font-weight-text-light);
         --font-weight-title: var(--font-weight-title-light);
 
+        --color-core: white;
+
         /* Градиент для светлой темы*/
         --bg-image:
             repeating-linear-gradient(90deg, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
@@ -64,6 +70,8 @@
         /* Вес шрифта */
         --font-weight-text: var(--font-weight-text-dark);
         --font-weight-title: var(--font-weight-title-dark);
+
+        --color-core: black;
 
         /* Градиент для тёмной темы*/
         --bg-image:
