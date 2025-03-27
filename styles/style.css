@@ -29,8 +29,6 @@
   fill: red;
 }
 
-body {}
-
 .header {
   display: flex;
   flex-direction: column;
@@ -123,6 +121,7 @@ body {}
 
 .main__card-title {
   margin: 4px 10px 6px;
+  font-size: 18px;
 }
 
 .main__card-text {
@@ -170,7 +169,8 @@ body {}
 
 .card__like-button {
   margin-right: 25px;
-  width: 118px;
+  width: 130px;
+  height: 38px;
   font-size: 14px;
   font-family: var(--font-accent);
   text-align: center;
@@ -179,7 +179,7 @@ body {}
 .like-buttons {
   display: flex;
   justify-self: end;
-  margin-block-end: 25px;
+  margin-block-end: 21px;
 }
 
 /* Для сердцевины  */
@@ -277,17 +277,6 @@ body {}
   transition: fill 0.1s linear;
 }
 
-
-
-
-
-
-
-
-.card__icon-button {
-  padding: 6px 12px 0 0;
-}
-
 .main__card {
   margin-block-end: 50px;
 }
@@ -315,10 +304,11 @@ body {}
   font-family: var(--font-accent);
   line-height: 150%;
   text-transform: uppercase;
-  padding: 30px 41px; 
+  padding: 30px 41px;
   border: var(--color-accent) 2px solid;
   color: var(--color-accent);
   background-color: var(--color-background);
+  max-width: 353px;
 }
 
 .dialog-content {
@@ -344,4 +334,28 @@ body {}
 
 dialog::backdrop {
   background-color: rgb(0 0 0 / 75%);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-block-start: 52px;
+  margin-block-end: 100px;
+}
+
+.button-save {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding-block-start: 15px;
+  padding-block-end: 15px;
+  min-width: 306px;
+}
+
+@media (width >= 768px) {
+  .button-save{
+    flex-direction: row;
+    min-width: 335px;
+  }
 }
