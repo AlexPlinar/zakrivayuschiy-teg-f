@@ -9,3 +9,98 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+/* Для сердцевины  */
+.like-icon .heart .core {
+    fill: var(--color-core);
+    transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon:hover .heart .core {
+    fill: var(--color-contour);
+    transition-delay: 0s;
+}
+
+/* Для основного тела сердца */
+.like-icon .heart .main-body {
+    fill: transparent;
+    transition: fill 0.3s linear 0s;
+}
+
+.like-icon:hover .heart .main-body {
+    fill: var(--color-contour);
+    transition-delay: 0.05s;
+}
+
+/* Состояние :active — при нажатии и удержании */
+.like-icon:active .heart .core {
+    fill: red;
+    transition: fill 0.3s linear 0s;
+    /* переход без задержки */
+}
+
+.like-icon:active .heart .main-body {
+    fill: red;
+    transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon .sparks {
+    opacity: 0;
+}
+
+/* При клике: сердцевина (.core) и основное тело (.main-body) заполняются красным */
+.like-icon.is-liked .heart .core,
+.like-icon.is-liked .heart .main-body {
+    fill: red;
+    transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .heart .contour {
+    fill: red;
+    transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .heart {
+    transform-origin: center;
+    animation: scalePulse 0.3s ease-in 0.1s;
+}
+
+/* Масштабирование сердца: от 1 до 1.5 и обратно до 1 */
+@keyframes scalePulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.like-icon.is-liked .sparks {
+    animation: sparkFlash 0.6s ease-in 0.2s;
+}
+
+/* Появление искр: плавное появление и исчезновение */
+@keyframes sparkFlash {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* При отключении класса is-liked (сердце выключают) контур возвращается быстрее —
+     за 0.1s без задержек */
+.like-icon:not(.is-liked) .heart .contour {
+    transition: fill 0.1s linear;
+}

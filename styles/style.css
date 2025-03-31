@@ -172,101 +172,6 @@
   margin-block-end: 21px;
 }
 
-/* Для сердцевины  */
-.like-icon .heart .core {
-  fill: var(--color-core);
-  transition: fill 0.3s linear 0.03s;
-}
-
-.like-icon:hover .heart .core {
-  fill: var(--color-contour);
-  transition-delay: 0s;
-}
-
-/* Для основного тела сердца */
-.like-icon .heart .main-body {
-  fill: transparent;
-  transition: fill 0.3s linear 0s;
-}
-
-.like-icon:hover .heart .main-body {
-  fill: var(--color-contour);
-  transition-delay: 0.05s;
-}
-
-/* Состояние :active — при нажатии и удержании */
-.like-icon:active .heart .core {
-  fill: red;
-  transition: fill 0.3s linear 0s;
-  /* переход без задержки */
-}
-
-.like-icon:active .heart .main-body {
-  fill: red;
-  transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon .sparks {
-  opacity: 0;
-}
-
-/* При клике: сердцевина (.core) и основное тело (.main-body) заполняются красным */
-.like-icon.is-liked .heart .core,
-.like-icon.is-liked .heart .main-body {
-  fill: red;
-  transition: fill 0.3s linear;
-}
-
-.like-icon.is-liked .heart .contour {
-  fill: red;
-  transition: fill 0.3s linear 0.06s;
-}
-
-.like-icon.is-liked .heart {
-  transform-origin: center;
-  animation: scalePulse 0.3s ease-in 0.1s;
-}
-
-/* Масштабирование сердца: от 1 до 1.5 и обратно до 1 */
-@keyframes scalePulse {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.5);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-.like-icon.is-liked .sparks {
-  animation: sparkFlash 0.6s ease-in 0.2s;
-}
-
-/* Появление искр: плавное появление и исчезновение */
-@keyframes sparkFlash {
-  0% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-/* При отключении класса is-liked (сердце выключают) контур возвращается быстрее —
-   за 0.1s без задержек */
-.like-icon:not(.is-liked) .heart .contour {
-  transition: fill 0.1s linear;
-}
-
 .main__card {
   margin-block-end: 51px;
 }
@@ -358,6 +263,10 @@ dialog::backdrop {
   }
 }
 
+.main__card:nth-of-type(1) .main__card-image {
+  filter: hue-rotate(340deg);
+}
+
 .main__card:nth-of-type(2) .main__card-image {
   filter: saturate(0.3);
 }
@@ -371,17 +280,17 @@ dialog::backdrop {
 }
 
 .main__card:nth-of-type(5) .main__card-image {
-  filter: invert(1) brightness(0.8) contrast(0.6);
+  filter: brightness(0.8) contrast(1.6);
 }
 
 .main__card:nth-of-type(6) .main__card-image {
-  filter: sepia(0.8);
+  filter: sepia(0.8) saturate(1.5) brightness(0.8);
 }
 
 .main__card:nth-of-type(7) .main__card-image {
-  filter: blur(10px);
+  filter: blur(5px);
 }
 
 .main__card:nth-of-type(8) .main__card-image {
-  filter: hue-rotate(95deg) contrast(0.4) saturate(2) blur(1.5px);
+  filter: saturate(1.3) blur(0.5px) brightness(0.9);
 }
