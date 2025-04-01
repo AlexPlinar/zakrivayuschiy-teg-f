@@ -10,6 +10,15 @@
 
 */
 
+
+.card__icon-button:focus-visible {
+    outline: none;
+    border: 2px solid black;
+    box-sizing: border-box; 
+    /* центрировать и border настроить */
+} 
+
+
 /* Для сердцевины  */
 .like-icon .heart .core {
     fill: var(--color-core);
@@ -103,4 +112,14 @@
      за 0.1s без задержек */
 .like-icon:not(.is-liked) .heart .contour {
     transition: fill 0.1s linear;
+}
+
+@keyframes move-arrow {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(4px);
+    }
 }

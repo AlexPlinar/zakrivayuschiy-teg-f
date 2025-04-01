@@ -133,7 +133,12 @@
 
 .main__card-label {
     mix-blend-mode: hard-light;
-    -webkit-text-stroke: 1px var(--color-label-border);
+}
+
+@supports (-webkit-text-stroke: 1px var(--color-label-border)) {
+    .main__card-label {
+        -webkit-text-stroke: 1px var(--color-label-border);
+    }
 }
 
 @supports not (-webkit-text-stroke: 1px var(--color-label-border)) {
