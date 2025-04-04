@@ -10,14 +10,12 @@
 
 */
 
-
 .card__icon-button:focus-visible {
     outline: none;
     border: 2px solid black;
     box-sizing: border-box; 
     /* центрировать и border настроить */
 } 
-
 
 /* Для сердцевины  */
 .like-icon .heart .core {
@@ -26,7 +24,7 @@
 }
 
 .like-icon:hover .heart .core {
-    fill: var(--color-contour);
+    fill: black;
     transition-delay: 0s;
 }
 
@@ -37,7 +35,7 @@
 }
 
 .like-icon:hover .heart .main-body {
-    fill: var(--color-contour);
+    fill: black;
     transition-delay: 0.05s;
 }
 

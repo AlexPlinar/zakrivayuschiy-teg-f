@@ -1,39 +1,26 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+/* Для себя пояснение: 
+1. Пропишу сначала значения для светлой темы, когда активна кнопка "АВТО"
+2. Продублирую их в themes.css :root.theme-light, когда активна кнопка "СВЕТЛАЯ ТЕМА"
+3. Пропишу значения переменных в :root.theme-dark, когда активна кнопка "ТЁМНАЯ ТЕМА"
+4. Напишу медиазапрос только для противоположной (тёмной) темы, так как для светлой уже есть - пункт 1. */
+
 :root {
-    /* Шрифтовые переменные */
     --font-primary: 'Inter', sans-serif;
-    /* Основной шрифт */
     --font-accent: 'PressStart2P', 'Courier New', Courier, monospace;
-    /* Акцентный шрифт */
-
-    /* Переменные толщины шрифта (для типографики карточки) */
-    --font-weight-text-light: 400;
-    /* Вес основного текста для светлой темы */
-    --font-weight-text-dark: 485;
-    /* Вес основного текста для тёмной темы */
-    --font-weight-title-light: 700;
-    /* Вес заголовка для светлой темы */
-    --font-weight-title-dark: 785;
-    /* Вес заголовка для тёмной темы */
-    --font-weight-buttons: 400;
-
-    /* Переменные для цветовой темы (начальные значения для светлой темы) */
+    
     --color-background: white;
     --color-accent: black;
     --color-label-border: white;
-
-    /* Цвет контура */
-    --color-contour: black;
-    /* Начальный цвет сердцевины */
+    --color-text-mixed: white;
     --color-core: white;
 
+    --font-weight-text: 400;
+    --font-weight-title: 700;
 
-    /* Градиент для светлой темы*/
     --bg-image:
         repeating-linear-gradient(90deg, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
         repeating-linear-gradient(180deg, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
         linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
-    --bg-size: cover;
-
-
 }

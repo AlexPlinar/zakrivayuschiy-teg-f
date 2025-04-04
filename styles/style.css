@@ -11,12 +11,15 @@
 */
 
 .page {
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: var(--color-background);
   min-inline-size: 320px;
   min-block-size: 100dvb;
-}
-
-.floppy {
-  fill: red;
+  color: var(--color-accent);
+  font-family: var(--font-primary);
+  font-variation-settings: "wght" var(--font-weight-text);
 }
 
 .header {
@@ -24,6 +27,8 @@
   flex-direction: column;
   align-items: center;
   margin: 100px 0;
+  border: 2px solid var(--color-accent);
+  background-color: var(--color-background);
   padding-block-start: 120px;
   font-family: var(--font-accent);
   text-transform: uppercase;
@@ -99,13 +104,19 @@
   content: "▶";
 }
 
+.main {
+  font-size: 18px;
+}
+
 .main__card-title {
   margin: 4px 10px 6px;
   font-size: 18px;
+  font-variation-settings: "wght" var(--font-weight-title);
 }
 
 .main__card-text {
   margin: 20px 25px 26px;
+  font-variation-settings: "wght" var(--font-weight-text);
 }
 
 .mixed-effect {
@@ -149,6 +160,7 @@
 
 .card__like-button {
   margin-right: 25px;
+  padding: 0;
   width: 130px;
   height: 38px;
   font-size: 14px;
@@ -158,12 +170,17 @@
 
 .like-buttons {
   display: flex;
+  justify-content: center;
+  align-items: center;
   justify-self: end;
+  gap: 4px;
   margin-block-end: 21px;
 }
 
 .main__card {
   margin-block-end: 51px;
+  border: 2px solid var(--color-accent);
+  background-color: var(--color-background);
 }
 
 .main__card-image-wrapper {
@@ -235,6 +252,53 @@ dialog::backdrop {
   font-family: var(--font-accent);
 }
 
+.button-save__text {
+  font-variation-settings: "wght" var(--font-weight-buttons);
+}
+
+.card__like-button,
+.button-save {
+  border: 2px solid var(--color-accent);
+  background-color: var(--color-background);
+  color: var(--color-accent);
+}
+
+.card__icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: var(--color-background);
+  padding: 0;
+}
+
+.card__icon-button:focus-visible {
+  box-shadow:
+    inset 0 0 0 1px black,
+    0 0 0 1px black;
+  border: none !important;
+}
+
+.main__card-label {
+  mix-blend-mode: hard-light;
+}
+
+@supports (-webkit-text-stroke: 1px var(--color-label-border)) {
+  .main__card-label {
+    -webkit-text-stroke: 1px var(--color-label-border);
+  }
+}
+
+@supports not (-webkit-text-stroke: 1px var(--color-label-border)) {
+  .main__card-label {
+    text-shadow:
+      -1px -1px 0 var(--color-label-border),
+      1px -1px 0 var(--color-label-border),
+      -1px 1px 0 var(--color-label-border),
+      1px 1px 0 var(--color-label-border);
+  }
+}
+
 @media (width >=768px) {
   .header {
     padding-block-start: 137px;
@@ -244,6 +308,11 @@ dialog::backdrop {
     flex-direction: row;
     justify-content: center;
     min-width: 335px;
+  }
+
+  .button-save svg {
+    width: 21px;
+    height: 21px;
   }
 
   .floppy {
@@ -281,6 +350,11 @@ dialog::backdrop {
   filter: blur(1px) contrast(1.2);
 }
 
+.main__card-image {
+  border-block: 2px solid var(--color-accent);
+  min-height: 371px;
+  object-fit: contain;
+}
 
 /* .main__card:nth-of-type(1) .main__card-image {
   filter: hue-rotate(340deg);
