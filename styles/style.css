@@ -192,9 +192,9 @@
   top: 24px;
   right: 11px;
   opacity: 50%;
+  mix-blend-mode: hard-light;
   font-size: 14px;
   font-family: var(--font-accent);
-  mix-blend-mode: hard-light;
 }
 
 .dialog {
@@ -273,16 +273,28 @@ dialog::backdrop {
   padding: 0;
 }
 
-.card__icon-button:focus-visible {
+.like-buttons .card__icon-button:focus-visible {
   box-shadow:
-    inset 0 0 0 1px black,
-    0 0 0 1px black;
-  border: none !important;
+    inset 0 0 0 1px var(--color-accent),
+    0 0 0 1px var(--color-accent);
+  border: none;
 }
 
 @supports (-webkit-text-stroke: 1px var(--color-label-border)) {
   .main__card-label {
-    -webkit-text-stroke: 1px var(--color-label-border);
+    /* -webkit-text-stroke: 1px var(--color-label-border); */
+
+    /* Ревьюеру: Text-stroke хоть и работает, но сильно съедает жирность шрифта. Поэтому получается тонкий шрифт визуально. 
+   В таком случае либо жирность шрифта увеличить надо, но это не будет соответсвовать жирности в макете. 
+   Либо использовать стандартный text-shadow.
+   Я выбрал второй вариант в данном случае, так как он визуально хорошо соответствует макету
+   Надеюсь не ошибся) */
+
+    text-shadow:
+      -1px -1px 0 var(--color-label-border),
+      1px -1px 0 var(--color-label-border),
+      -1px 1px 0 var(--color-label-border),
+      1px 1px 0 var(--color-label-border);
   }
 }
 
@@ -317,6 +329,14 @@ dialog::backdrop {
     width: 21px;
     height: 21px;
   }
+
+  .main__card-image {
+    height: 696px;
+  }
+
+  .main__card-label {
+    right: 25px;
+  }
 }
 
 .filter-hue-rotate {
@@ -350,7 +370,7 @@ dialog::backdrop {
 .main__card-image {
   border-block: 2px solid var(--color-accent);
   min-height: 371px;
-  object-fit: contain;
+  object-fit: fill;
 }
 
 /* .main__card:nth-of-type(1) .main__card-image {
